@@ -75,5 +75,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "UserApi.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "Users/User/{azon}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "azon",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -60,5 +60,25 @@ namespace UserApi.Controllers
                 return StatusCode(200,existingUser);
             }
         }
+        [HttpDelete("{azon}")]
+        public ActionResult<object> Delete(Guid azon)
+        {
+            using (var context = new UserDbContext()) {
+            
+                var existingUser = context.NewUser.FirstOrDefault(x =>x.Id == azon);
+                if (existingUser == null) {
+                    return NotFound(new{ message = "Nincs!" });
+
+                }
+
+                context.NewUser.Remove(existingUser);
+                context.SaveChanges();
+                return StatusCode(200, new { message = "Sikeres Törlés!" });
+            }
+            
+           
+
+
+        }
     }
 }
